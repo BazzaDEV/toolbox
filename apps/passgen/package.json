@@ -1,5 +1,5 @@
 {
-  "name": "passgen",
+  "name": "@repo/passgen",
   "version": "0.1.0",
   "private": true,
   "scripts": {

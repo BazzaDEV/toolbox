@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  font-feature-settings:
+    'liga' 1,
+    'calt' 1;
+  font-stretch: 80%;
+}
