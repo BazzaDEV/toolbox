@@ -1,10 +1,12 @@
 import type { Config } from 'tailwindcss'
+import { default as baseConfig } from '@repo/ui/tailwind'
 
 export default {
+  presets: [baseConfig],
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
+    '../../packages/ui/src/**/*.{js,ts,jsx,tsx,mdx}',
   ],
   theme: {
     extend: {
@@ -17,5 +19,4 @@ export default {
       },
     },
   },
-  plugins: [],
 } satisfies Config

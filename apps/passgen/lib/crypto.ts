@@ -7,12 +7,11 @@ export type PasswordOptions = {
   excludeAmbiguous?: boolean
 }
 
-const UPPERCASE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-const LOWERCASE_CHARS = 'abcdefghijklmnopqrstuvwxyz'
-const NUMBER_CHARS = '0123456789'
-const SYMBOL_CHARS = '!@#$%^&*()-_=+[]{}|;:,.<>?'
-
-const AMBIGUOUS_CHARS = 'O0l1I'
+export const UPPERCASE_CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+export const LOWERCASE_CHARS = 'abcdefghijklmnopqrstuvwxyz'
+export const NUMBER_CHARS = '0123456789'
+export const SYMBOL_CHARS = '!@#$%^&*()-_=+[]{}|;:,.?~'
+export const AMBIGUOUS_CHARS = 'O0l1I'
 
 export function generatePassword(options: PasswordOptions): string {
   const {
@@ -47,7 +46,7 @@ export function generatePassword(options: PasswordOptions): string {
 
   for (let i = 0; i < length; i++) {
     const randomValue = cryptoObj.getRandomValues(new Uint32Array(1))[0]
-    const index = randomValue % characterSet.length
+    const index = randomValue! % characterSet.length
     password.push(characterSet.charAt(index))
   }
 

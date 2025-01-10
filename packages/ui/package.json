@@ -1,26 +1,70 @@
 {
-  "name": "ui",
+  "name": "@repo/ui",
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "echo 'Add dev script here'",
-    "build": "echo 'Add build script here'",
-    "test": "echo 'Add test script here'",
-    "lint": "echo 'Add lint script here'"
+    "ui:init": "pnpm dlx shadcn@latest init",
+    "ui:add": "pnpm dlx shadcn@latest add",
+    "dev": "tsc --watch",
+    "lint": "tsc --noEmit && eslint . && prettier . --write",
+    "build": "tsc"
+  },
+  "files": [
+    "tailwind.config.ts",
+    "postcss.config.js",
+    "globals.css"
+  ],
+  "exports": {
+    "./animated-size-container": "./src/components/ui/animated-size-container.tsx",
+    "./avatar": "./src/components/ui/avatar.tsx",
+    "./badge": "./src/components/ui/badge.tsx",
+    "./button": "./src/components/ui/button.tsx",
+    "./checkbox": "./src/components/ui/checkbox.tsx",
+    "./combobox": "./src/components/ui/combobox.tsx",
+    "./command": "./src/components/ui/command.tsx",
+    "./dialog": "./src/components/ui/dialog.tsx",
+    "./dropdown-menu": "./src/components/ui/dropdown-menu.tsx",
+    "./form": "./src/components/ui/form.tsx",
+    "./input": "./src/components/ui/input.tsx",
+    "./label": "./src/components/ui/label.tsx",
+    "./popover": "./src/components/ui/popover.tsx",
+    "./separator": "./src/components/ui/separator.tsx",
+    "./slider": "./src/components/ui/slider.tsx",
+    "./sonner": "./src/components/ui/sonner.tsx",
+    "./tooltip": "./src/components/ui/tooltip.tsx",
+    "./globals.css": "./src/globals.css",
+    "./tailwind": "./tailwind.config.ts",
+    "./postcss": "./postcss.config.js",
+    "./cn": "./src/utils/cn.ts",
+    "./hooks": "./src/hooks/index.ts",
+    "./suspense": "./src/components/suspense/lazy-suspense.tsx",
+    "./colors": "./src/colors/index.ts"
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
     "@repo/prettier-config": "workspace:*",
-    "prettier": "^3.2.5",
-    "tailwindcss": "^3.4.1"
+    "@repo/typescript-config": "workspace:*",
+    "@types/node": "catalog:",
+    "@types/react": "^19",
+    "prettier": "catalog:",
+    "tailwindcss": "catalog:",
+    "typescript": "catalog:"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.10.0",
+    "@radix-ui/react-checkbox": "^1.1.3",
+    "@radix-ui/react-label": "^2.1.1",
+    "@radix-ui/react-slider": "^1.2.2",
+    "@radix-ui/react-slot": "^1.1.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "lucide-react": "^0.469.0",
+    "next-themes": "^0.4.4",
+    "react": "^19.0.0",
+    "react-hook-form": "^7.54.2",
+    "sonner": "^1.7.1",
     "tailwind-merge": "^2.6.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zod": "^3.24.1"
   }
 }
-

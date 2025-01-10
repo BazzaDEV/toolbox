@@ -3,8 +3,18 @@
 @tailwind utilities;
 
 :root {
-  font-feature-settings:
-    'liga' 1,
-    'calt' 1;
-  font-stretch: 80%;
+  * {
+    cursor: default;
+  }
+
+  /* Opt text-based inputs out of "forced" default cursor */
+  input[type='text'],
+  input[type='number'],
+  input[type='password'],
+  input[type='email'],
+  textarea,
+  select {
+    cursor: text;
+  }
+  /*font-stretch: 80%;*/
 }
